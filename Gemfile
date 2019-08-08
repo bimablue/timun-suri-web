@@ -17,7 +17,7 @@ gem 'imatcher', '0.1.5'
 gem 'os'
 gem 'data_magic', '~> 0.21'
 gem 'show_me_the_cookies'
-gem 'rake'
+gem "rack", ">= 2.0.6"
 gem 'cuke_sniffer'
 gem 'report_builder'
 gem 'rubocop', '0.59.2', require: false
