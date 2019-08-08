@@ -1,4 +1,4 @@
-# KRYPTONITE :: An Automation Testing Framework for Sleekr
+# TIMUNSURI :: An Automation Testing Framework
 
 ### Requirement
 [Ruby](https://www.ruby-lang.org/en/) with version 2.3.0 or above. We recommend to use ruby version manager like [rvm](https://rvm.io/) to install the ruby.
