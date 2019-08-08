@@ -1,0 +1,17 @@
+class SideMenuPage < SitePrism::Section
+    element :dashboard_menu_btn, '#dashboard-li'
+    element :report_menu_btn, '#reports-li'
+    element :cash_and_bank_btn, '#registers-li'
+    element :sales_btn, '#sales-li'
+    element :purchase_btn, '#purchases-li'
+    element :expenses_btn, '#expenses-li'
+    element :customers_btn, '#customers-li'
+    element :vendors_btn, '#vendors-li'
+    element :products_btn, '#products-li'
+    element :assets_management_btn, '#assets-li'
+    element :chart_of_account_btn, '#bookkeeping-chart_of_accounts-li'
+    element :other_lists_button, '#company-lists-li'
+    element :add_ons_btn, '#add-ons-li'
+    element :settings_btn, '#company-setting-li'
+    element :logout_btn, '#vnav-logout-link'
+end

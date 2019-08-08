@@ -1,0 +1,3 @@
+default: --format pretty --format html --out=report/<%= ENV['REPORT_PATH']%>/features_reports.html -f rerun  -o report/<%= ENV['REPORT_PATH']%>/rerun.txt
+parallel: -p rake_run
+rake_run: --format pretty --format html --out report/<%= ENV['REPORT_PATH']%>/features_report<%= ENV['TEST_ENV_NUMBER']%>.html --format json --out=report/<%= ENV['REPORT_PATH']%>/cucumber<%= ENV['TEST_ENV_NUMBER']%>.json -f rerun  -o report/<%= ENV['REPORT_PATH']%>/rerun.txt

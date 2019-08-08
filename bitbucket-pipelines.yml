@@ -1,0 +1,33 @@
+image: ruby:2.5.1
+
+pipelines:
+  default:
+    - step:
+        name: Build docker image branches
+        caches:
+          - docker
+        script:
+          - export tag=ICE-$(echo $BITBUCKET_BRANCH | cut -c -10)
+          - docker login -u _json_key -p "$GCR_JSON" https://gcr.io
+          - docker build -t gcr.io/sleekr-hr-staging/sleekr/kryptonite:$tag .
+          - docker push gcr.io/sleekr-hr-staging/sleekr/kryptonite:$tag
+        services:
+          - docker
+  branches:
+    master:
+      - step:
+          name: Build docker image
+          caches:
+            - docker
+          script:
+            - export tag=ICE-$(echo $BITBUCKET_BUILD_NUMBER | cut -c -7)
+            - docker login -u _json_key -p "$GCR_JSON" https://gcr.io
+            - docker build -t gcr.io/sleekr-hr-staging/sleekr/kryptonite:$tag .
+            - docker tag gcr.io/sleekr-hr-staging/sleekr/kryptonite:$tag gcr.io/sleekr-hr-staging/sleekr/kryptonite:ICE-master
+            - docker push gcr.io/sleekr-hr-staging/sleekr/kryptonite:$tag
+            - docker push gcr.io/sleekr-hr-staging/sleekr/kryptonite:ICE-master
+          services:
+            - docker
+
+options:
+  docker: true

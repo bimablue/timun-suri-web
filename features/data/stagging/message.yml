@@ -1,0 +1,12 @@
+login:
+  invalid_username_password: "Invalid email or password."
+  send_email_reset_password: "You will receive an email with instructions on how to reset your password in a few minutes."
+
+password:
+  email_not_found: "not found"
+
+vendor:
+  vendor_success_created: "Successfully processed."
+
+cash and bank:
+  cash_and_bank_success_created: "Successfully processed."
